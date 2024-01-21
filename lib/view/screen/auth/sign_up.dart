@@ -1,28 +1,28 @@
+import 'package:ecommerce7/controller/auth/sign_up_controller.dart';
 import 'package:ecommerce7/core/constant/color.dart';
 import 'package:ecommerce7/view/widget/auth/logo_auth.dart';
 import 'package:ecommerce7/view/widget/auth/txt_body_auth.dart';
 import 'package:ecommerce7/view/widget/auth/txt_form_field.dart';
-import 'package:ecommerce7/view/widget/auth/txt_sign_up.dart';
 import 'package:ecommerce7/view/widget/auth/txt_title_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-import '../../../controller/auth/login_controller.dart';
 import '../../widget/auth/button_auth.dart';
+import '../../widget/auth/txt_sign_up.dart';
 
-class Login extends StatelessWidget {
-  const Login({Key? key}) : super(key: key);
+class SignUp extends StatelessWidget {
+  const SignUp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    SignInControllerImp controller = Get.put(SignInControllerImp());
+    SignUpControllerImp controller = Get.put(SignUpControllerImp());
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Clrs.backgroundcolor,
         elevation: 0.0,
         title: Text(
-          "17".tr,
+          "15".tr,
           style:
               Theme.of(context).textTheme.headline1!.copyWith(color: Clrs.grey),
         ),
@@ -32,7 +32,6 @@ class Login extends StatelessWidget {
           padding: EdgeInsets.symmetric(vertical: 15.h, horizontal: 40.w),
           child: ListView(
             children: [
-              LogoAuth(),
               CustomTxtTitleAuth(txt: "4".tr),
               SizedBox(
                 height: 12.h,
@@ -45,37 +44,40 @@ class Login extends StatelessWidget {
                 hintTxt: "7".tr,
                 labelTxt: "6".tr,
                 icon: Icons.person,
-                myController: controller.email,
-                // myController: myController
+                myController: controller.username,
               ),
               CustomTxtFormField(
                 hintTxt: "9".tr,
                 labelTxt: "8".tr,
                 icon: Icons.email_outlined,
-                myController: controller.password,
-                // myController: myController
+                myController: controller.email,
               ),
-              InkWell(
-                onTap: () {
-                  controller.goToForgetPassword();
-                },
-                child: Text(
-                  "16".tr,
-                  textAlign: TextAlign.end,
-                ),
+              CustomTxtFormField(
+                hintTxt: "11".tr,
+                labelTxt: "10".tr,
+                icon: Icons.phone,
+                myController: controller.phone,
+              ),
+              CustomTxtFormField(
+                hintTxt: "13".tr,
+                labelTxt: "12".tr,
+                icon: Icons.lock_outline,
+                myController: controller.password,
               ),
               CustomButtonAuth(
-                txt: "17".tr,
-                onPressed: () {},
+                txt: "15".tr,
+                onPressed: () {
+                  controller.signUp();
+                },
               ),
               SizedBox(
                 height: 12.h,
               ),
               CustomTxtAuth(
-                  txt1: "14".tr,
-                  txt2: "15".tr,
+                  txt1: "18".tr,
+                  txt2: "17".tr,
                   onTap: () {
-                    controller.goToSignUp();
+                    controller.goToSignIn();
                   }),
             ],
           )),

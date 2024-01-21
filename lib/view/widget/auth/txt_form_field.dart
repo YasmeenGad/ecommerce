@@ -14,7 +14,7 @@ class CustomTxtFormField extends StatelessWidget {
       required this.hintTxt,
       required this.labelTxt,
       required this.icon,
-      this.myController});
+      required this.myController});
 
   @override
   Widget build(BuildContext context) {
