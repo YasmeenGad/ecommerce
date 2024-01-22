@@ -1,6 +1,6 @@
 import 'package:ecommerce7/controller/auth/sign_up_controller.dart';
 import 'package:ecommerce7/core/constant/color.dart';
-import 'package:ecommerce7/view/widget/auth/logo_auth.dart';
+import 'package:ecommerce7/core/functions/alert_exit_app.dart';
 import 'package:ecommerce7/view/widget/auth/txt_body_auth.dart';
 import 'package:ecommerce7/view/widget/auth/txt_form_field.dart';
 import 'package:ecommerce7/view/widget/auth/txt_title_auth.dart';
@@ -32,18 +32,21 @@ class SignUp extends StatelessWidget {
           centerTitle: true,
         ),
         body: GetBuilder<SignUpControllerImp>(
-          builder: (controller) => Container(
-              padding: EdgeInsets.symmetric(vertical: 15.h, horizontal: 40.w),
-              child: Form(
-                key: controller.formState,
-                child: ListView(
-                  children: [
-                    CustomTxtTitleAuth(txt: "4".tr),
-                    SizedBox(
-                      height: 12.h,
-                    ),
-                    CustomTxtBodyAuth(txt: "5".tr),
-                    SizedBox(
+            builder: (controller) => WillPopScope(
+                  onWillPop: alertExitApp,
+                  child: Container(
+                      padding: EdgeInsets.symmetric(
+                          vertical: 15.h, horizontal: 40.w),
+                      child: Form(
+                        key: controller.formState,
+                        child: ListView(
+                          children: [
+                            CustomTxtTitleAuth(txt: "4".tr),
+                            SizedBox(
+                              height: 12.h,
+                            ),
+                            CustomTxtBodyAuth(txt: "5".tr),
+                            SizedBox(
                       height: 70.sp,
                     ),
                     CustomTxtFormField(
@@ -93,17 +96,17 @@ class SignUp extends StatelessWidget {
                       },
                     ),
                     SizedBox(
-                      height: 12.h,
-                    ),
-                    CustomTxtAuth(
-                        txt1: "18".tr,
-                        txt2: "17".tr,
-                        onTap: () {
-                          controller.goToSignIn();
-                        }),
-                  ],
-                ),
-              )),
-        ));
+                              height: 12.h,
+                            ),
+                            CustomTxtAuth(
+                                txt1: "18".tr,
+                                txt2: "17".tr,
+                                onTap: () {
+                                  controller.goToSignIn();
+                                }),
+                          ],
+                        ),
+                      )),
+                )));
   }
 }

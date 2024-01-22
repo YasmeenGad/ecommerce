@@ -1,28 +1,28 @@
 import 'package:get/get.dart';
 
 validInput(String val, int min, int max, String type) {
-  if (type == "username") {
+  if (type == "6".tr) {
     if (!GetUtils.isUsername(val)) {
-      return "not valid username";
+      return "44".tr;
     }
   }
-  if (type == "email") {
+  if (type == "8".tr) {
     if (!GetUtils.isEmail(val)) {
-      return "not valid email";
+      return "45".tr;
     }
   }
-  if (type == "phone") {
+  if (type == "10".tr) {
     if (!GetUtils.isPhoneNumber(val)) {
-      return "not valid phone";
+      return "46".tr;
     }
   }
   if (val.isEmpty) {
-    return "this field can't be empty";
+    return "47".tr;
   }
   if (val.length > max) {
-    return "can't be less than $min";
+    return "48$min".tr;
   }
   if (val.length < min) {
-    return "can't be larger than $max";
+    return "49$max".tr;
   }
 }
