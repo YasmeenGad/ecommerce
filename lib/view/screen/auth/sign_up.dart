@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
+import '../../../core/functions/valid_input.dart';
 import '../../widget/auth/button_auth.dart';
 import '../../widget/auth/txt_sign_up.dart';
 
@@ -41,24 +42,36 @@ class SignUp extends StatelessWidget {
                 height: 70.sp,
               ),
               CustomTxtFormField(
+                valid: (val) {
+                  return validInput(val!, 5, 100, "username");
+                },
                 hintTxt: "7".tr,
                 labelTxt: "6".tr,
                 icon: Icons.person,
                 myController: controller.username,
               ),
               CustomTxtFormField(
+                valid: (val) {
+                  return validInput(val!, 8, 50, "email");
+                },
                 hintTxt: "9".tr,
                 labelTxt: "8".tr,
                 icon: Icons.email_outlined,
                 myController: controller.email,
               ),
               CustomTxtFormField(
+                valid: (val) {
+                  return validInput(val!, 11, 30, "phone");
+                },
                 hintTxt: "11".tr,
                 labelTxt: "10".tr,
                 icon: Icons.phone,
                 myController: controller.phone,
               ),
               CustomTxtFormField(
+                valid: (val) {
+                  return validInput(val!, 5, 30, "password");
+                },
                 hintTxt: "13".tr,
                 labelTxt: "12".tr,
                 icon: Icons.lock_outline,

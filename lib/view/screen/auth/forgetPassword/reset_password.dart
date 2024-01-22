@@ -9,6 +9,7 @@ import 'package:get/get.dart';
 
 import '../../../../controller/auth/forget_password_controller.dart';
 import '../../../../controller/auth/reset_password_controller.dart';
+import '../../../../core/functions/valid_input.dart';
 import '../../../widget/auth/button_auth.dart';
 import '../../../widget/auth/txt_sign_up.dart';
 
@@ -43,12 +44,18 @@ class ResetPassword extends StatelessWidget {
                 height: 70.sp,
               ),
               CustomTxtFormField(
+                valid: (val) {
+                  return validInput(val!, 5, 30, "password");
+                },
                 hintTxt: "13".tr,
                 labelTxt: "12".tr,
                 icon: Icons.lock_outline,
                 myController: controller.password,
               ),
               CustomTxtFormField(
+                valid: (val) {
+                  return validInput(val!, 5, 30, "password");
+                },
                 hintTxt: "29".tr,
                 labelTxt: "12".tr,
                 icon: Icons.lock_outline,

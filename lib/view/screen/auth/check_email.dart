@@ -10,6 +10,7 @@ import 'package:get/get.dart';
 import '../../../../controller/auth/forget_password_controller.dart';
 
 import '../../../controller/auth/check_email_controller.dart';
+import '../../../core/functions/valid_input.dart';
 import '../../widget/auth/button_auth.dart';
 
 class CheckEmail extends StatelessWidget {
@@ -42,6 +43,9 @@ class CheckEmail extends StatelessWidget {
                 height: 70.sp,
               ),
               CustomTxtFormField(
+                valid: (val) {
+                  return validInput(val!, 8, 50, "email");
+                },
                 hintTxt: "9".tr,
                 labelTxt: "8".tr,
                 icon: Icons.email_outlined,

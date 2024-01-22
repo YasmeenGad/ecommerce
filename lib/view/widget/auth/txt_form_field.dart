@@ -8,19 +8,23 @@ class CustomTxtFormField extends StatelessWidget {
   final String labelTxt;
   final IconData icon;
   final TextEditingController? myController;
+  final String? Function(String?)? valid;
 
-  const CustomTxtFormField(
-      {super.key,
-      required this.hintTxt,
-      required this.labelTxt,
-      required this.icon,
-      required this.myController});
+  const CustomTxtFormField({
+    super.key,
+    required this.hintTxt,
+    required this.labelTxt,
+    required this.icon,
+    required this.myController,
+    required this.valid,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(bottom: 25.h),
       child: TextFormField(
+        validator: valid,
         controller: myController,
         decoration: InputDecoration(
             label: Text("${labelTxt}"),
