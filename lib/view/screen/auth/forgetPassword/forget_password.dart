@@ -32,35 +32,40 @@ class ForgetPassword extends StatelessWidget {
       ),
       body: Container(
           padding: EdgeInsets.symmetric(vertical: 15.h, horizontal: 40.w),
-          child: ListView(
-            children: [
-              CustomTxtTitleAuth(txt: "19".tr),
-              SizedBox(
-                height: 12.h,
-              ),
-              CustomTxtBodyAuth(txt: "23".tr),
-              SizedBox(
-                height: 70.sp,
-              ),
-              CustomTxtFormField(
-                valid: (val) {
-                  return validInput(val!, 8, 50, "email");
-                },
-                hintTxt: "9".tr,
-                labelTxt: "8".tr,
-                icon: Icons.email_outlined,
-                myController: controller.email,
-              ),
-              CustomButtonAuth(
-                txt: "20".tr,
-                onPressed: () {
-                  controller.goToVerifyCode();
-                },
-              ),
-              SizedBox(
-                height: 12.h,
-              ),
-            ],
+          child: Form(
+            key: controller.formState,
+            child: ListView(
+              children: [
+                CustomTxtTitleAuth(txt: "19".tr),
+                SizedBox(
+                  height: 12.h,
+                ),
+                CustomTxtBodyAuth(txt: "23".tr),
+                SizedBox(
+                  height: 70.sp,
+                ),
+                CustomTxtFormField(
+                  isNumber: false,
+                  valid: (val) {
+                    return validInput(val!, 8, 50, "email");
+                  },
+                  hintTxt: "9".tr,
+                  labelTxt: "8".tr,
+                  icon: Icons.email_outlined,
+                  myController: controller.email,
+                ),
+                CustomButtonAuth(
+                  txt: "20".tr,
+                  onPressed: () {
+                    controller.checkEmail();
+                    controller.goToVerifyCode();
+                  },
+                ),
+                SizedBox(
+                  height: 12.h,
+                ),
+              ],
+            ),
           )),
     );
   }

@@ -45,6 +45,7 @@ class Login extends StatelessWidget {
                   height: 70.sp,
                 ),
                 CustomTxtFormField(
+                  isNumber: false,
                   valid: (val) {
                     return validInput(val!, 8, 50, "email");
                   },
@@ -55,6 +56,7 @@ class Login extends StatelessWidget {
                   // myController: myController
                 ),
                 CustomTxtFormField(
+                  isNumber: false,
                   valid: (val) {
                     return validInput(val!, 5, 30, "password");
                   },

@@ -33,44 +33,50 @@ class ResetPassword extends StatelessWidget {
       ),
       body: Container(
           padding: EdgeInsets.symmetric(vertical: 15.h, horizontal: 40.w),
-          child: ListView(
-            children: [
-              CustomTxtTitleAuth(txt: "26".tr),
-              SizedBox(
-                height: 12.h,
-              ),
-              CustomTxtBodyAuth(txt: "27".tr),
-              SizedBox(
-                height: 70.sp,
-              ),
-              CustomTxtFormField(
-                valid: (val) {
-                  return validInput(val!, 5, 30, "password");
-                },
-                hintTxt: "13".tr,
-                labelTxt: "12".tr,
-                icon: Icons.lock_outline,
-                myController: controller.password,
-              ),
-              CustomTxtFormField(
-                valid: (val) {
-                  return validInput(val!, 5, 30, "password");
-                },
-                hintTxt: "29".tr,
-                labelTxt: "12".tr,
-                icon: Icons.lock_outline,
-                myController: controller.rePassword,
-              ),
-              CustomButtonAuth(
-                txt: "28".tr,
-                onPressed: () {
-                  controller.goToSuccessResetPassword();
-                },
-              ),
-              SizedBox(
-                height: 12.h,
-              ),
-            ],
+          child: Form(
+            key: controller.formState,
+            child: ListView(
+              children: [
+                CustomTxtTitleAuth(txt: "26".tr),
+                SizedBox(
+                  height: 12.h,
+                ),
+                CustomTxtBodyAuth(txt: "27".tr),
+                SizedBox(
+                  height: 70.sp,
+                ),
+                CustomTxtFormField(
+                  isNumber: false,
+                  valid: (val) {
+                    return validInput(val!, 5, 30, "password");
+                  },
+                  hintTxt: "13".tr,
+                  labelTxt: "12".tr,
+                  icon: Icons.lock_outline,
+                  myController: controller.password,
+                ),
+                CustomTxtFormField(
+                  isNumber: false,
+                  valid: (val) {
+                    return validInput(val!, 5, 30, "password");
+                  },
+                  hintTxt: "29".tr,
+                  labelTxt: "12".tr,
+                  icon: Icons.lock_outline,
+                  myController: controller.rePassword,
+                ),
+                CustomButtonAuth(
+                  txt: "28".tr,
+                  onPressed: () {
+                    controller.resetPassword();
+                    controller.goToSuccessResetPassword();
+                  },
+                ),
+                SizedBox(
+                  height: 12.h,
+                ),
+              ],
+            ),
           )),
     );
   }

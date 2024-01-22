@@ -9,6 +9,7 @@ class CustomTxtFormField extends StatelessWidget {
   final IconData icon;
   final TextEditingController? myController;
   final String? Function(String?)? valid;
+  final bool isNumber;
 
   const CustomTxtFormField({
     super.key,
@@ -17,6 +18,7 @@ class CustomTxtFormField extends StatelessWidget {
     required this.icon,
     required this.myController,
     required this.valid,
+    required this.isNumber,
   });
 
   @override
@@ -24,6 +26,9 @@ class CustomTxtFormField extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(bottom: 25.h),
       child: TextFormField(
+        keyboardType: isNumber
+            ? const TextInputType.numberWithOptions(decimal: true)
+            : TextInputType.text,
         validator: valid,
         controller: myController,
         decoration: InputDecoration(
@@ -35,7 +40,7 @@ class CustomTxtFormField extends StatelessWidget {
             contentPadding:
                 EdgeInsets.symmetric(vertical: 5.h, horizontal: 35.w),
             border:
-                OutlineInputBorder(borderRadius: BorderRadius.circular(30))),
+            OutlineInputBorder(borderRadius: BorderRadius.circular(30))),
       ),
     );
   }
