@@ -12,7 +12,7 @@ class CustomButtonLang extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 100.w),
+      padding: EdgeInsets.symmetric(horizontal: 80.w),
       width: MediaQuery.of(context).size.width,
       child: MaterialButton(
         textColor: Clrs.white,

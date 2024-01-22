@@ -29,30 +29,12 @@ class MyApp extends StatelessWidget {
       builder: (context, child) {
         LocaleController localeController = Get.put(LocaleController());
         return GetMaterialApp(
-          locale: localeController.language,
-          translations: MyTranslation(),
-          home: child,
-          routes: routes,
-          debugShowCheckedModeBanner: false,
-          theme: ThemeData(
-              fontFamily: "PlayfairDisplay",
-              textTheme: TextTheme(
-                headline1: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 25.sp,
-                    color: Clrs.black),
-                headline2: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 29.sp,
-                    color: Clrs.black),
-                bodyText1: TextStyle(
-                  fontSize: 18.sp,
-                  height: 1.3.h,
-                  color: Clrs.grey,
-                  fontWeight: FontWeight.w400,
-                ),
-              )),
-        );
+            locale: localeController.language,
+            translations: MyTranslation(),
+            home: child,
+            routes: routes,
+            debugShowCheckedModeBanner: false,
+            theme: localeController.appTheme);
       },
       child: const Language(),
     );

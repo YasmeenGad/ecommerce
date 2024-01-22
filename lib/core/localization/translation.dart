@@ -38,6 +38,16 @@ class MyTranslation extends Translations {
           "31": "تهانينا",
           "32": "تم التسجيل بنجاح",
           "33": "الذهاب لصفحه تسجيل الدخول",
+          "34": "اختر المنتجات",
+          "35": "نحن لدينا 100 الف منتج  , اختر \n  منتجك  من  متجرنا",
+          "36": "سهل وامن للشراء",
+          "37": "يمكنك الدفع كاش او \n من خلال بوابات الدفع الالكترونية",
+          "38": "تتبع طلبك",
+          "39": "يمكنك تتبع طلبك في كل مرحلة \n وايضا التتبع من خلال الخريطة",
+          "40": "متابعه",
+          "41": "توصيل سريع",
+          "42": "نحن لدينا 100 الف منتج  , اختر \n  منتجك  من  متجرنا",
+          "43": "تم اعادة تعيين كلمة المرور بنجاح",
         },
         "English": {
           "1": "Choose Language",
@@ -73,7 +83,20 @@ class MyTranslation extends Translations {
           "30": "Success",
           "31": "congratulations",
           "32": "successfully registered",
-          "33": "Got To Login"
+          "33": "Got To Login",
+          "34": "Choose Product",
+          "35":
+              "We Have a 100k Product , Choose \n Your Product From  Our \n E-commerce Shop",
+          "36": "Easy And Safe Paymnet",
+          "37": "You can pay in cash \n or through payment gateways",
+          "38": "Track Your Order",
+          "39":
+              "The order can be tracked at every stage \n until it reaches you",
+          "40": "Continue",
+          "41": "Fast Delivery",
+          "42":
+              "We Have a 100k Product , Choose \n Your Product From  Our \n E-commerce Shop",
+          "43": "Password has been reset successfully",
         },
       };
 }

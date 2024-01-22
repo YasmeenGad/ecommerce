@@ -1,27 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../core/constant/image_assets.dart';
 import '../../model/onboarding_model.dart';
 
 List<OnBoardingModel> onBoardingList = [
   OnBoardingModel(
-      title: "Choose Product",
-      body:
-          "We Have a 100k Product ,\n Choose  Your Product From \n Our E-commerce Shop",
-      image: AppAsset.onBoardingImg1),
+      title: "34".tr, body: "35".tr, image: AppAsset.onBoardingImg1),
   OnBoardingModel(
-      title: "Easy And Safe Paymnet",
-      body:
-          "We Have a 100k Product ,\n Choose Your Product From \n Our E-commerce Shop",
-      image: AppAsset.onBoardingImg2),
+      title: "36".tr, body: "37".tr, image: AppAsset.onBoardingImg2),
   OnBoardingModel(
-      title: "Track Your Order",
-      body:
-          "We Have a 100k Product ,\n Choose Your Product From \n Our E-commerce Shop",
-      image: AppAsset.onBoardingImg3),
+      title: "38".tr, body: "39".tr, image: AppAsset.onBoardingImg3),
   OnBoardingModel(
-      title: "Fast Delivery",
-      body:
-          "We Have a 100k Product ,\n Choose Your Product From \n Our E-commerce Shop",
-      image: AppAsset.onBoardingImg4),
+      title: "41".tr, body: "42".tr, image: AppAsset.onBoardingImg4),
 ];

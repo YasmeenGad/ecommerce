@@ -17,7 +17,7 @@ class CustomButton extends GetView<OnBoardingControllerImp> {
       },
       child: Padding(
         padding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 60.w),
-        child: Text("Continue",
+        child: Text("40".tr,
             style: TextStyle(color: Colors.white, fontSize: 20.sp)),
       ),
     );

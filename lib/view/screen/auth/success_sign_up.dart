@@ -1,3 +1,4 @@
+import 'package:ecommerce7/controller/auth/success_signUp_controller.dart';
 import 'package:ecommerce7/core/constant/color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -10,6 +11,8 @@ class SuccessSignUp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SuccessSignUpControllerImp controller =
+        Get.put(SuccessSignUpControllerImp());
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Clrs.backgroundcolor,
@@ -42,7 +45,9 @@ class SuccessSignUp extends StatelessWidget {
               width: MediaQuery.of(context).size.width,
               child: CustomButtonAuth(
                 txt: "33".tr,
-                onPressed: () {},
+                onPressed: () {
+                  controller.goToPageLogin();
+                },
               ),
             ),
           ],

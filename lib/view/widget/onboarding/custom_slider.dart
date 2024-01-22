@@ -22,7 +22,10 @@ class CustomSliderOnBoarding extends GetView<OnBoardingControllerImp> {
           children: [
             Text(
               "${onBoardingList[index].title!}",
-              style: Theme.of(context).textTheme.headline1,
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 25.sp,
+                  color: Clrs.black),
             ),
             SizedBox(
               height: 50.h,
@@ -45,7 +48,12 @@ class CustomSliderOnBoarding extends GetView<OnBoardingControllerImp> {
               child: Text(
                 "${onBoardingList[index].body!}",
                 textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.bodyText1,
+                style: TextStyle(
+                  fontSize: 18.sp,
+                  height: 1.3.h,
+                  color: Clrs.grey,
+                  fontWeight: FontWeight.w400,
+                ),
               ),
             )
           ],
