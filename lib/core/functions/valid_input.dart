@@ -20,9 +20,9 @@ validInput(String val, int min, int max, String type) {
     return "47".tr;
   }
   if (val.length > max) {
-    return "48$min".tr;
+    return "49$min".tr;
   }
   if (val.length < min) {
-    return "49$max".tr;
+    return "48".tr + "$min";
   }
 }

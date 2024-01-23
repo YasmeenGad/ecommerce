@@ -47,55 +47,61 @@ class SignUp extends StatelessWidget {
                             ),
                             CustomTxtBodyAuth(txt: "5".tr),
                             SizedBox(
-                      height: 70.sp,
-                    ),
-                    CustomTxtFormField(
-                      isNumber: false,
-                      valid: (val) {
-                        return validInput(val!, 5, 100, "username");
-                      },
-                      hintTxt: "7".tr,
-                      labelTxt: "6".tr,
-                      icon: Icons.person,
-                      myController: controller.username,
-                    ),
-                    CustomTxtFormField(
-                      isNumber: false,
-                      valid: (val) {
-                        return validInput(val!, 8, 50, "email");
-                      },
-                      hintTxt: "9".tr,
-                      labelTxt: "8".tr,
-                      icon: Icons.email_outlined,
-                      myController: controller.email,
-                    ),
-                    CustomTxtFormField(
-                      isNumber: true,
-                      valid: (val) {
-                        return validInput(val!, 8, 11, "phone");
-                      },
-                      hintTxt: "11".tr,
-                      labelTxt: "10".tr,
-                      icon: Icons.phone,
-                      myController: controller.phone,
-                    ),
-                    CustomTxtFormField(
-                      isNumber: false,
-                      valid: (val) {
-                        return validInput(val!, 5, 30, "password");
-                      },
-                      hintTxt: "13".tr,
-                      labelTxt: "12".tr,
-                      icon: Icons.lock_outline,
-                      myController: controller.password,
-                    ),
-                    CustomButtonAuth(
-                      txt: "15".tr,
-                      onPressed: () {
-                        controller.signUp();
-                      },
-                    ),
-                    SizedBox(
+                              height: 70.sp,
+                            ),
+                            CustomTxtFormField(
+                              isNumber: false,
+                              valid: (val) {
+                                return validInput(val!, 5, 100, "username");
+                              },
+                              hintTxt: "7".tr,
+                              labelTxt: "6".tr,
+                              icon: Icons.person,
+                              myController: controller.username,
+                            ),
+                            CustomTxtFormField(
+                              isNumber: false,
+                              valid: (val) {
+                                return validInput(val!, 8, 50, "email");
+                              },
+                              hintTxt: "9".tr,
+                              labelTxt: "8".tr,
+                              icon: Icons.email_outlined,
+                              myController: controller.email,
+                            ),
+                            CustomTxtFormField(
+                              isNumber: true,
+                              valid: (val) {
+                                return validInput(val!, 8, 11, "phone");
+                              },
+                              hintTxt: "11".tr,
+                              labelTxt: "10".tr,
+                              icon: Icons.phone,
+                              myController: controller.phone,
+                            ),
+                            GetBuilder<SignUpControllerImp>(
+                              builder: (controller) => CustomTxtFormField(
+                                obsecure: controller.isShowPassword,
+                                onTapIcon: () {
+                                  controller.showPassword();
+                                },
+                                isNumber: false,
+                                valid: (val) {
+                                  return validInput(val!, 5, 30, "password");
+                                },
+                                hintTxt: "13".tr,
+                                labelTxt: "12".tr,
+                                icon: Icons.lock_outline,
+                                myController: controller.password,
+                              ),
+                            ),
+                            CustomButtonAuth(
+                              txt: "15".tr,
+                              onPressed: () {
+                                controller.signUp();
+                              },
+                            ),
+                            SizedBox(
                               height: 12.h,
                             ),
                             CustomTxtAuth(

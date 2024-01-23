@@ -45,25 +45,37 @@ class ResetPassword extends StatelessWidget {
                 SizedBox(
                   height: 70.sp,
                 ),
-                CustomTxtFormField(
-                  isNumber: false,
-                  valid: (val) {
-                    return validInput(val!, 5, 30, "password");
-                  },
-                  hintTxt: "13".tr,
-                  labelTxt: "12".tr,
-                  icon: Icons.lock_outline,
-                  myController: controller.password,
+                GetBuilder<ResetPasswordControllerImp>(
+                  builder: (controller) => CustomTxtFormField(
+                    obsecure: controller.isShowPassword,
+                    onTapIcon: () {
+                      controller.showPassword();
+                    },
+                    isNumber: false,
+                    valid: (val) {
+                      return validInput(val!, 5, 30, "password");
+                    },
+                    hintTxt: "13".tr,
+                    labelTxt: "12".tr,
+                    icon: Icons.lock_outline,
+                    myController: controller.password,
+                  ),
                 ),
-                CustomTxtFormField(
-                  isNumber: false,
-                  valid: (val) {
-                    return validInput(val!, 5, 30, "password");
-                  },
-                  hintTxt: "29".tr,
-                  labelTxt: "12".tr,
-                  icon: Icons.lock_outline,
-                  myController: controller.rePassword,
+                GetBuilder<ResetPasswordControllerImp>(
+                  builder: (controller) => CustomTxtFormField(
+                    obsecure: controller.isShowPassword,
+                    onTapIcon: () {
+                      controller.showPassword();
+                    },
+                    isNumber: false,
+                    valid: (val) {
+                      return validInput(val!, 5, 30, "password");
+                    },
+                    hintTxt: "29".tr,
+                    labelTxt: "12".tr,
+                    icon: Icons.lock_outline,
+                    myController: controller.rePassword,
+                  ),
                 ),
                 CustomButtonAuth(
                   txt: "28".tr,

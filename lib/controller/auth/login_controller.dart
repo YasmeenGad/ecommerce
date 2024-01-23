@@ -9,12 +9,22 @@ abstract class SignInController extends GetxController {
   goToSignUp();
 
   goToForgetPassword();
+
+  showPassword();
 }
 
 class SignInControllerImp extends SignInController {
   GlobalKey<FormState> formState = GlobalKey<FormState>();
   late TextEditingController email;
   late TextEditingController password;
+
+  bool isShowPassword = true;
+
+  @override
+  showPassword() {
+    isShowPassword = isShowPassword == true ? false : true;
+    update();
+  }
 
   @override
   signIn() {

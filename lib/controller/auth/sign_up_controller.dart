@@ -4,6 +4,8 @@ import 'package:get/get.dart';
 import '../../core/constant/route_name.dart';
 
 abstract class SignUpController extends GetxController {
+  showPassword();
+
   signUp();
 
   goToSignIn();
@@ -15,6 +17,14 @@ class SignUpControllerImp extends SignUpController {
   late TextEditingController password;
   late TextEditingController username;
   late TextEditingController phone;
+
+  bool isShowPassword = true;
+
+  @override
+  showPassword() {
+    isShowPassword = isShowPassword == true ? false : true;
+    update();
+  }
 
   @override
   signUp() {

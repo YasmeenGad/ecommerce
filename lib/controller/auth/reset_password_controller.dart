@@ -4,6 +4,8 @@ import 'package:get/get.dart';
 import '../../core/constant/route_name.dart';
 
 abstract class ResetPasswordController extends GetxController {
+  showPassword();
+
   resetPassword();
 
   goToSuccessResetPassword();
@@ -13,6 +15,14 @@ class ResetPasswordControllerImp extends ResetPasswordController {
   late TextEditingController password;
   late TextEditingController rePassword;
   GlobalKey<FormState> formState = GlobalKey<FormState>();
+
+  bool isShowPassword = true;
+
+  @override
+  showPassword() {
+    isShowPassword = isShowPassword == true ? false : true;
+    update();
+  }
 
   @override
   resetPassword() {

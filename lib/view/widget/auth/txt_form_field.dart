@@ -10,6 +10,8 @@ class CustomTxtFormField extends StatelessWidget {
   final TextEditingController? myController;
   final String? Function(String?)? valid;
   final bool isNumber;
+  final bool? obsecure;
+  final void Function()? onTapIcon;
 
   const CustomTxtFormField({
     super.key,
@@ -19,6 +21,8 @@ class CustomTxtFormField extends StatelessWidget {
     required this.myController,
     required this.valid,
     required this.isNumber,
+    this.obsecure,
+    this.onTapIcon,
   });
 
   @override
@@ -26,6 +30,7 @@ class CustomTxtFormField extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(bottom: 25.h),
       child: TextFormField(
+        obscureText: obsecure == null || obsecure == false ? false : true,
         keyboardType: isNumber
             ? const TextInputType.numberWithOptions(decimal: true)
             : TextInputType.text,
@@ -35,12 +40,13 @@ class CustomTxtFormField extends StatelessWidget {
             label: Text("${labelTxt}"),
             hintText: "${hintTxt}",
             hintStyle: TextStyle(fontSize: 16.sp),
-            suffixIcon: Icon(icon, color: Clrs.grey),
+            suffixIcon:
+                InkWell(onTap: onTapIcon, child: Icon(icon, color: Clrs.grey)),
             floatingLabelBehavior: FloatingLabelBehavior.always,
             contentPadding:
                 EdgeInsets.symmetric(vertical: 5.h, horizontal: 35.w),
             border:
-            OutlineInputBorder(borderRadius: BorderRadius.circular(30))),
+                OutlineInputBorder(borderRadius: BorderRadius.circular(30))),
       ),
     );
   }

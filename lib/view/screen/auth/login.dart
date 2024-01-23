@@ -60,17 +60,23 @@ class Login extends StatelessWidget {
                       myController: controller.email,
                       // myController: myController
                     ),
-                    CustomTxtFormField(
-                      isNumber: false,
-                      valid: (val) {
-                        return validInput(val!, 5, 30, "password");
-                      },
-                      hintTxt: "13".tr,
-                      labelTxt: "12".tr,
-                      icon: Icons.password,
-                      myController: controller.password,
+                    GetBuilder<SignInControllerImp>(
+                      builder: (controller) => CustomTxtFormField(
+                        obsecure: controller.isShowPassword,
+                        onTapIcon: () {
+                          controller.showPassword();
+                        },
+                        isNumber: false,
+                        valid: (val) {
+                          return validInput(val!, 5, 30, "password");
+                        },
+                        hintTxt: "13".tr,
+                        labelTxt: "12".tr,
+                        icon: Icons.password,
+                        myController: controller.password,
 
-                      // myController: myController
+                        // myController: myController
+                      ),
                     ),
                     InkWell(
                       onTap: () {
